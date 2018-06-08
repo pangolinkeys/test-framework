@@ -37,6 +37,8 @@ class BarTest extends RefineryTestCase
     {
         return [
             'foos',
+            'created_at',
+            'updated_at',
         ];
     }
 
@@ -61,7 +63,7 @@ class BarTest extends RefineryTestCase
     protected function getDisallowedItems()
     {
         return [
-            'id'
+            'id',
         ];
     }
 }

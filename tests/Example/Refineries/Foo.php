@@ -6,7 +6,6 @@ use Michaeljennings\Refinery\Refinery;
 
 class Foo extends Refinery
 {
-
     /**
      * Set the template the refinery will use for each item passed to it
      *
@@ -15,7 +14,10 @@ class Foo extends Refinery
      */
     protected function setTemplate($item)
     {
-        return [];
+        return [
+            'created_at' => $item->created_at,
+            'updated_at' => $item->updated_at,
+        ];
     }
 
     protected function bar()

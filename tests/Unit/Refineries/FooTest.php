@@ -37,6 +37,8 @@ class FooTest extends RefineryTestCase
     {
         return [
             'bar',
+            'created_at',
+            'updated_at',
         ];
     }
 

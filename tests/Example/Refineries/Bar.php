@@ -15,7 +15,10 @@ class Bar extends Refinery
      */
     protected function setTemplate($item)
     {
-        return [];
+        return [
+            'created_at' => $item->created_at,
+            'updated_at' => $item->updated_at,
+        ];
     }
 
     protected function foos()
