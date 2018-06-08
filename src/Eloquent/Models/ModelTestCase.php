@@ -2,11 +2,14 @@
 
 namespace Pangolinkeys\TestFramework\Eloquent\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Pangolinkeys\TestFramework\TestCase;
 
 abstract class ModelTestCase extends TestCase
 {
     /**
+     * Test all the expected traits have been implemented.
+     *
      * @test
      */
     public function test_model_implements_traits()
@@ -19,14 +22,14 @@ abstract class ModelTestCase extends TestCase
     /**
      * Return an array of all the traits that should be seen on the model.
      *
-     * @return mixed
+     * @return array
      */
     protected abstract function getTraits();
 
     /**
      * Return an instance of the model for evaluation.
      *
-     * @return mixed
+     * @return Model
      */
     protected function getModel()
     {
@@ -36,11 +39,23 @@ abstract class ModelTestCase extends TestCase
     /**
      * Return the contract class that the model should implement.
      *
-     * @return mixed
+     * @return string
      */
     protected abstract function getContract();
 
     /**
+     * Test to ensure that the model exists.
+     *
+     * @test
+     */
+    public function test_model_instantiates()
+    {
+        $this->assertNotNull($this->getModel());
+    }
+
+    /**
+     * Test the model implements the provided contract.
+     *
      * @test
      */
     public function test_model_implements_contract()
@@ -51,6 +66,8 @@ abstract class ModelTestCase extends TestCase
     }
 
     /**
+     * Test the relationships that should be seen on the model are there.
+     *
      * @test
      */
     public function test_model_has_expected_relationships()
@@ -71,7 +88,7 @@ abstract class ModelTestCase extends TestCase
     /**
      * Return a key value pair of the relationships on the model and their types.
      *
-     * @return mixed
+     * @return array
      */
     protected abstract function getRelationships();
 }

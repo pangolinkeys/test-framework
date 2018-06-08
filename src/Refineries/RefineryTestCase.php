@@ -2,6 +2,7 @@
 
 namespace Pangolinkeys\TestFramework\Refineries;
 
+use Illuminate\Database\Eloquent\Model;
 use Michaeljennings\Refinery\Refinery;
 use Pangolinkeys\TestFramework\TestCase;
 
@@ -34,6 +35,11 @@ abstract class RefineryTestCase extends TestCase
      */
     protected abstract function getRefineryClass();
 
+    /**
+     * Test that the model is instantiated.
+     *
+     * @test
+     */
     protected function test_model_exists()
     {
         return $this->assertNotNull($this->getModel());
@@ -42,7 +48,7 @@ abstract class RefineryTestCase extends TestCase
     /**
      * Get an instance of the model.
      *
-     * @return mixed
+     * @return Model
      */
     protected function getModel()
     {
@@ -52,7 +58,7 @@ abstract class RefineryTestCase extends TestCase
     /**
      * Get the class for the model the refinery needs to use.
      *
-     * @return mixed
+     * @return string
      */
     protected abstract function getModelClass();
 
