@@ -9,7 +9,6 @@ use Pangolinkeys\TestFramework\Tests\Example\Eloquent\Models\Foo;
 
 class FooTest extends ModelTestCase
 {
-
     /**
      * Return an array of all the traits that should be seen on the model.
      *
