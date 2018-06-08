@@ -1,0 +1,22 @@
+{
+  "name": "pangolinkeys/test-framework",
+  "description": "A package to provide a convenient interface to test Models etc in Laravel",
+  "type": "library",
+  "require": {
+    "orchestra/testbench": "^3.6"
+  },
+  "require-dev": {
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Pangolinkeys\\TestFramework\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "pangolinkeys",
+      "email": "me@jamesaidancook.com"
+    }
+  ]
+}
