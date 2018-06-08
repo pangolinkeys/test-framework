@@ -3,7 +3,8 @@
   "description": "A package to provide a convenient interface to test Models etc in Laravel",
   "type": "library",
   "require": {
-    "orchestra/testbench": "^3.6"
+    "orchestra/testbench": "^3.6",
+    "michaeljennings/refinery": "^1.2"
   },
   "require-dev": {
   },
