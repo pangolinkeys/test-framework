@@ -8,9 +8,12 @@ use Pangolinkeys\TestFramework\Tests\Example\ExampleProvider;
 
 class TestCase extends OrchestraTestCase
 {
+
     protected function setUp()
     {
         parent::setUp();
+
+        $this->artisan('migrate');
 
         $testCase = $this->app->make(TestCaseContract::class);
 

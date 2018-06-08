@@ -15,7 +15,6 @@ class CreateBarsTable extends Migration
     {
         Schema::create('bars', function (Blueprint $table) {
             $table->increments('id');
-
             $table->softDeletes();
             $table->timestamps();
         });

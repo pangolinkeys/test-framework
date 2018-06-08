@@ -13,7 +13,7 @@ abstract class RefineryTestCase extends TestCase
      *
      * @test
      */
-    protected function test_refinery_exists()
+    public function test_refinery_exists()
     {
         $this->assertNotNull($this->getRefinery());
     }
@@ -40,7 +40,7 @@ abstract class RefineryTestCase extends TestCase
      *
      * @test
      */
-    protected function test_model_exists()
+    public function test_model_exists()
     {
         return $this->assertNotNull($this->getModel());
     }
@@ -67,7 +67,7 @@ abstract class RefineryTestCase extends TestCase
      *
      * @test
      */
-    protected function test_expected_values_are_present()
+    public function test_expected_values_are_present()
     {
         foreach ($this->getExpectedItems() as $key) {
             $this->assertArrayHasKey($key, $this->getRefinery()->bring($this->getAttachments())->refine($this->getModel()));
@@ -93,7 +93,7 @@ abstract class RefineryTestCase extends TestCase
      *
      * @test
      */
-    protected function test_disallowed_items_are_not_present()
+    public function test_disallowed_items_are_not_present()
     {
         foreach ($this->getDisallowedItems() as $key) {
             $this->assertArrayNotHasKey($key, $this->getRefinery()->bring($this->getAttachments())->refine($this->getModel()));
