@@ -91,4 +91,14 @@ abstract class ModelTestCase extends TestCase
      * @return array
      */
     protected abstract function getRelationships();
+
+    /**
+     * Test that the provided contract is one for a model.
+     *
+     * @test
+     */
+    public function test_model_is_model()
+    {
+        $this->assertInstanceOf(Model::class, $this->getModel());
+    }
 }
