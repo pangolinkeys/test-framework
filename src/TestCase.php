@@ -3,7 +3,6 @@
 namespace Pangolinkeys\TestFramework;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Pangolinkeys\TestFramework\Contracts\TestCase as TestCaseContract;
 use Pangolinkeys\TestFramework\Tests\Example\ExampleProvider;
 
 class TestCase extends OrchestraTestCase
@@ -15,9 +14,6 @@ class TestCase extends OrchestraTestCase
 
         $this->artisan('migrate');
 
-        $testCase = $this->app->make(TestCaseContract::class);
-
-        $testCase->setUp($this);
     }
 
     protected function getPackageProviders($app)
@@ -27,5 +23,7 @@ class TestCase extends OrchestraTestCase
                 ExampleProvider::class,
             ];
         }
+
+        return env('SERVICE_PROVIDERS');
     }
 }
