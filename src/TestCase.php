@@ -24,6 +24,6 @@ class TestCase extends OrchestraTestCase
             ];
         }
 
-        return env('SERVICE_PROVIDERS');
+        return explode(', ', env('SERVICE_PROVIDERS'));
     }
 }
